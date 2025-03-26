@@ -1,0 +1,54 @@
+-J-Duser.language=
+-J-Duser.country=
+@options
+@packages
+-classpath
+'C:/Users/quart/.m2/repository/org/hibernate/orm/hibernate-core/6.6.8.Final/hibernate-core-6.6.8.Final.jar;C:/Users/quart/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar;C:/Users/quart/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar;C:/Users/quart/.m2/repository/com/mysql/mysql-connector-j/9.2.0/mysql-connector-j-9.2.0.jar;C:/Users/quart/.m2/repository/com/google/protobuf/protobuf-java/4.29.0/protobuf-java-4.29.0.jar'
+-encoding
+'UTF-8'
+-protected
+--release
+23
+-sourcepath
+'D:/projetos1/NetBeans/ProjetoPI-LojaDeCarros/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2025. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'D:/projetos1/NetBeans/ProjetoPI-LojaDeCarros/target/reports/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'ProjetoPI-LojaDeCarros 1.0-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'ProjetoPI-LojaDeCarros 1.0-SNAPSHOT API'
+br.com.senac.projetopi.lojadecarros
+DAO
+Entities
+Forms.RegitrosTelas
+Forms
+C:\Users\quart\.m2\repository\org\hibernate\orm\hibernate-core\6.6.8.Final\hibernate-core-6.6.8.Final.jar = 1740054510416
+C:\Users\quart\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar = 1738241480807
+C:\Users\quart\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar = 1738241481486
+C:\Users\quart\.m2\repository\com\mysql\mysql-connector-j\9.2.0\mysql-connector-j-9.2.0.jar = 1738241692610
+C:\Users\quart\.m2\repository\com\google\protobuf\protobuf-java\4.29.0\protobuf-java-4.29.0.jar = 1738241692868
+D:\projetos1\NetBeans\ProjetoPI-LojaDeCarros\src\main\java = 1740142267798
+D:\projetos1\NetBeans\ProjetoPI-LojaDeCarros\target\reports\apidocs\allclasses-index.html = 1742837890248
+D:\projetos1\NetBeans\ProjetoPI-LojaDeCarros\target\reports\apidocs\allpackages-index.html = 1742837890251
+D:\projetos1\NetBeans\ProjetoPI-LojaDeCarros\target\reports\apidocs\element-list = 1742837889847
+D:\projetos1\NetBeans\ProjetoPI-LojaDeCarros\target\reports\apidocs\help-doc.html = 1742837890321
+D:\projetos1\NetBeans\ProjetoPI-LojaDeCarros\target\reports\apidocs\index-all.html = 1742837890308
+D:\projetos1\NetBeans\ProjetoPI-LojaDeCarros\target\reports\apidocs\index.html = 1742837890215
+D:\projetos1\NetBeans\ProjetoPI-LojaDeCarros\target\reports\apidocs\member-search-index.js = 1742837890263
+D:\projetos1\NetBeans\ProjetoPI-LojaDeCarros\target\reports\apidocs\module-search-index.js = 1742837890254
+D:\projetos1\NetBeans\ProjetoPI-LojaDeCarros\target\reports\apidocs\overview-summary.html = 1742837890315
+D:\projetos1\NetBeans\ProjetoPI-LojaDeCarros\target\reports\apidocs\overview-tree.html = 1742837890206
+D:\projetos1\NetBeans\ProjetoPI-LojaDeCarros\target\reports\apidocs\package-search-index.js = 1742837890256
+D:\projetos1\NetBeans\ProjetoPI-LojaDeCarros\target\reports\apidocs\search.html = 1742837890311
+D:\projetos1\NetBeans\ProjetoPI-LojaDeCarros\target\reports\apidocs\serialized-form.html = 1742837889989
+D:\projetos1\NetBeans\ProjetoPI-LojaDeCarros\target\reports\apidocs\tag-search-index.js = 1742837890266
+D:\projetos1\NetBeans\ProjetoPI-LojaDeCarros\target\reports\apidocs\type-search-index.js = 1742837890259
