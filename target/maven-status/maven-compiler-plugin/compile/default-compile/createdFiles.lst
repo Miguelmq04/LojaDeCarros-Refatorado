@@ -40,6 +40,7 @@ Forms\TelaPrincipal$1.class
 Entities\TipoCargo.class
 Forms\TabelaCliente$4.class
 Forms\RegitrosTelas\RegistroFuncionario$3.class
+Forms\TabelaFuncionario$5.class
 Forms\TelaPrincipal$4.class
 Entities\Funcionarios.class
 Forms\RegitrosTelas\RegistroVendaCarro$3.class
@@ -59,6 +60,7 @@ Entities\LoginFuncionario.class
 Forms\RegitrosTelas\RegistroCliente$1.class
 Entities\RegistroVenda.class
 Forms\RegitrosTelas\RegistroFuncionario.class
+Forms\TabelaVeiculo$5.class
 DAO\CargoDAO.class
 Forms\RegitrosTelas\RegistroTelaVeiculo$3.class
 Forms\TabelaFuncionario$1.class

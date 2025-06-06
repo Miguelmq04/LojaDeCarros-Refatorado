@@ -10,6 +10,7 @@ import Entities.Funcionarios;
 import Forms.RegitrosTelas.RegistroFuncionario;
 import java.awt.event.KeyEvent;
 import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 
@@ -119,8 +120,8 @@ public class TabelaFuncionario extends javax.swing.JFrame {
             .addGroup(pnlTabelaFuncionarioLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnRegistrarFuncionario)
-                .addContainerGap(670, Short.MAX_VALUE))
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 827, Short.MAX_VALUE)
         );
         pnlTabelaFuncionarioLayout.setVerticalGroup(
             pnlTabelaFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

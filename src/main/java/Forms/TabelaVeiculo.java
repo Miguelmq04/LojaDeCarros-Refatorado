@@ -10,6 +10,7 @@ import Entities.Veiculo;
 import Forms.RegitrosTelas.RegistroTelaVeiculo;
 import java.awt.event.KeyEvent;
 import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -45,7 +46,6 @@ public class TabelaVeiculo extends javax.swing.JFrame {
         String dados[][] = new String[veiculo.size()][colunas.length];
         
         int i = 0;
-        
         for(Veiculo v : veiculo){
             String nomeFuncionario = "";
             String dataRegistro = "";
@@ -74,7 +74,6 @@ public class TabelaVeiculo extends javax.swing.JFrame {
             };
             i++;
         }
-        
         DefaultTableModel model = new DefaultTableModel(dados, colunas);
         tblVeiculo.setModel(model);
     }
@@ -90,7 +89,8 @@ public class TabelaVeiculo extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         tblVeiculo = new javax.swing.JTable();
-        btnRegistrarVeiculo = new javax.swing.JButton();
+        btnExcluirVeiculo = new javax.swing.JButton();
+        btnRegistrarVeiculo1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         itSairRegistroVeiculo = new javax.swing.JMenuItem();
@@ -117,11 +117,20 @@ public class TabelaVeiculo extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblVeiculo);
 
-        btnRegistrarVeiculo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnRegistrarVeiculo.setText("Registrar Veículo");
-        btnRegistrarVeiculo.addActionListener(new java.awt.event.ActionListener() {
+        btnExcluirVeiculo.setBackground(new java.awt.Color(255, 0, 0));
+        btnExcluirVeiculo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnExcluirVeiculo.setText("Excluir");
+        btnExcluirVeiculo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegistrarVeiculoActionPerformed(evt);
+                btnExcluirVeiculoActionPerformed(evt);
+            }
+        });
+
+        btnRegistrarVeiculo1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnRegistrarVeiculo1.setText("Registrar Veículo");
+        btnRegistrarVeiculo1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarVeiculo1ActionPerformed(evt);
             }
         });
 
@@ -145,18 +154,28 @@ public class TabelaVeiculo extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1329, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnRegistrarVeiculo)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnExcluirVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(16, 16, 16)
+                    .addComponent(btnRegistrarVeiculo1)
+                    .addContainerGap(1177, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnRegistrarVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnExcluirVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(433, Short.MAX_VALUE)
+                    .addComponent(btnRegistrarVeiculo1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap()))
         );
 
         pack();
@@ -176,10 +195,35 @@ public class TabelaVeiculo extends javax.swing.JFrame {
      * 
      * @param evt Evento disparado pela ação do botão.
      */
-    private void btnRegistrarVeiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarVeiculoActionPerformed
-       RegistroTelaVeiculo registroTelaVeiculo = new RegistroTelaVeiculo();
-       registroTelaVeiculo.setVisible(true);
-    }//GEN-LAST:event_btnRegistrarVeiculoActionPerformed
+    private void btnExcluirVeiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirVeiculoActionPerformed
+       try{
+           int linhaSelecionada = tblVeiculo.getSelectedRow();
+           
+           if(linhaSelecionada >= 0){
+               Object idObjetoVeiculo = (String)tblVeiculo.getValueAt(tblVeiculo.getSelectedRow(), 0);
+               int id = Integer.parseInt(idObjetoVeiculo.toString());
+               
+               int resposta = JOptionPane.showConfirmDialog(this, "Deseja mesmo excluir o registro " + id + "?");
+               if(resposta == JOptionPane.YES_OPTION){
+                   VeiculoDAO veiculoDAO = new VeiculoDAO();
+                   veiculoDAO.excluirVeiculo((id));
+                   JOptionPane.showMessageDialog(this, "Registro excluído com sucesso");
+                   
+                   DefaultTableModel modelo = (DefaultTableModel) tblVeiculo.getModel();
+                   modelo.removeRow(linhaSelecionada);
+               }
+               
+           }
+       }
+       catch(Exception e){
+           JOptionPane.showMessageDialog(this, "Ocorreu uma falha:\n" + e.getMessage());
+       }
+    }//GEN-LAST:event_btnExcluirVeiculoActionPerformed
+
+    private void btnRegistrarVeiculo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarVeiculo1ActionPerformed
+        RegistroTelaVeiculo registroTelaVeiculo = new RegistroTelaVeiculo();
+        registroTelaVeiculo.setVisible(true);
+    }//GEN-LAST:event_btnRegistrarVeiculo1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -217,7 +261,8 @@ public class TabelaVeiculo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnRegistrarVeiculo;
+    private javax.swing.JButton btnExcluirVeiculo;
+    private javax.swing.JButton btnRegistrarVeiculo1;
     private javax.swing.JMenuItem itSairRegistroVeiculo;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
@@ -229,6 +274,7 @@ public class TabelaVeiculo extends javax.swing.JFrame {
      * Método de acessibilidade, acessa a tela de cadastro de veículos usando ALT + C.
      */
     private void acessibilidadeTabelaVeiculo(){
-        btnRegistrarVeiculo.setMnemonic(KeyEvent.VK_C);
+        btnExcluirVeiculo.setMnemonic(KeyEvent.VK_C);
     }
+   
 }

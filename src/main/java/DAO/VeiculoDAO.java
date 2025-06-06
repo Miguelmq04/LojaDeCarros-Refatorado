@@ -44,4 +44,23 @@ public class VeiculoDAO {
             JPAUtil.closeEntityManager();
         }
     }
+    
+    public void excluirVeiculo(int id){
+        EntityManager em = JPAUtil.getEntityManager();
+        try{
+            Veiculo veiculo = em.find(Veiculo.class, id);
+            if(veiculo != null){
+                em.getTransaction().begin();
+                em.remove(veiculo);
+                em.getTransaction().commit();
+            }
+        }
+        catch(Exception e){
+            em.getTransaction().rollback();
+            throw e;
+        }
+        finally{
+            JPAUtil.closeEntityManager();
+        }
+    }
 }
