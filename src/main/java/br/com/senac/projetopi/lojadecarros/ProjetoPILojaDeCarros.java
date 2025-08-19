@@ -1,6 +1,6 @@
 package br.com.senac.projetopi.lojadecarros;
 
-import Forms.TelaPrincipal;
+import Forms.TelaLoginPI;
 
 
 public class ProjetoPILojaDeCarros {
@@ -8,7 +8,7 @@ public class ProjetoPILojaDeCarros {
     public static void main(String[] args) {
         java.awt.EventQueue.invokeLater(new Runnable(){
             public void run(){
-                new TelaPrincipal().setVisible(true);
+                new TelaLoginPI().setVisible(true);
             }
         });
     }

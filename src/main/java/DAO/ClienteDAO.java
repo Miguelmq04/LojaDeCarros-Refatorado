@@ -32,7 +32,7 @@ public class ClienteDAO {
      * Realiza a busca no banco de dados e retorna uma lista de objetos do tipo Cliente.
      * @return Uma lista de objetos do tipo Cliente.
      */
-    public List<Cliente> getCliente(){
+    public List<Cliente> listar(){
         EntityManager em = JPAUtil.getEntityManager();
         try{
             Query consulta = em.createQuery("select c from Cliente c");

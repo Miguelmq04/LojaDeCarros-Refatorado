@@ -13,8 +13,8 @@ public class LoginFuncionario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idLoginFuncionario;
     
-    private String Login;
-    private String Senha;
+    private String login;
+    private String senha;
 
     public Integer getIdLoginFuncionario() {
         return idLoginFuncionario;
@@ -25,18 +25,18 @@ public class LoginFuncionario {
     }
 
     public String getLogin() {
-        return Login;
+        return login;
     }
 
     public void setLogin(String Login) {
-        this.Login = Login;
+        this.login = Login;
     }
 
     public String getSenha() {
-        return Senha;
+        return senha;
     }
 
     public void setSenha(String Senha) {
-        this.Senha = Senha;
+        this.senha = Senha;
     }
 }

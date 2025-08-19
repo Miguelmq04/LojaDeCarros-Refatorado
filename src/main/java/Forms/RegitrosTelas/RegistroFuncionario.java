@@ -280,8 +280,8 @@ public class RegistroFuncionario extends javax.swing.JFrame {
          
          if(!validacaoCamposFuncionario()){
              if(validacaoFuncionarios()){
-                 funcionarios.setNomeFuncionario(txtNome.getText());
-                 funcionarios.setTelefone(txtTelefone.getText());
+                 funcionarios.setNomeFuncionario(txtNome.getText().trim());
+                 funcionarios.setTelefone(txtTelefone.getText().trim());
                  funcionarios.setCPF(txtCPF.getText());
                  
                  TipoCargo cargoSelecionado = (TipoCargo) cbxCargo.getSelectedItem();
@@ -291,20 +291,25 @@ public class RegistroFuncionario extends javax.swing.JFrame {
                  
                  loginFuncionario.setLogin(txtNomeLogin.getText());
                  loginFuncionario.setSenha(txtSenha.getText());
-                 loginFuncionarioDAO.cadastrarLogin(loginFuncionario);
                  
-                 funcionarios.setLoginFuncionario(loginFuncionario);
+                 try{
+                    loginFuncionarioDAO.cadastrarLogin(loginFuncionario);
+                    funcionarios.setLoginFuncionario(loginFuncionario);
+                    funcionarioDAO.cadastrarFuncionario(funcionarios);
                  
-                 funcionarioDAO.cadastrarFuncionario(funcionarios);
+                    JOptionPane.showMessageDialog(rootPane, "O Funcionario foi cadastrado.");
                  
-                 JOptionPane.showMessageDialog(rootPane, "O Funcionario foi cadastrado.");
-                 
-                 txtNome.setText("");
-                 txtTelefone.setText("");
-                 txtCPF.setText("");
-                 cbxCargo.setSelectedIndex(0);
-                 txtNomeLogin.setText("");
-                 txtSenha.setText("");
+                    txtNome.setText("");
+                    txtTelefone.setText("");
+                    txtCPF.setText("");
+                    cbxCargo.setSelectedIndex(0);
+                    txtNomeLogin.setText("");
+                    txtSenha.setText("");
+                 }
+                 catch(Exception ex){
+                    JOptionPane.showMessageDialog(rootPane, "Erro ao cadastrar o funcionário: " + ex.getMessage());
+                     return;
+                 }
              }
              else{
                  return;

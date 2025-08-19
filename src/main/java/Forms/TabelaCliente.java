@@ -25,19 +25,23 @@ public class TabelaCliente extends javax.swing.JFrame {
      */
     public TabelaCliente() {
         initComponents();
-        ClienteDAO clienteDAO = new ClienteDAO();
-        List<Cliente> cliente = clienteDAO.getCliente();
-        PreencherTabelaCliente(cliente);
         acessibilidadeTabelaCliente();
+        preencherTabelaCliente();
     }
 
+    private void preencherTabelaCliente(){
+        ClienteDAO clienteDAO = new ClienteDAO();
+        List<Cliente> clienteLista = clienteDAO.listar();
+        preencherTabelaCliente(clienteLista);
+    }
+    
     /**
      * Método para preencher a tabela com a lista de objetos do tipo cliente. 
      * Exibe todos os dados de cliente registrados no banco de dados na tabela, preenchendo as colunas 'ID', 'Nome', 'Telefone', 'CPF'.
      * 
      * @param listaCliente Lista de objetos do tipo Cliente a ser exibida na tabela.
      */
-    public void PreencherTabelaCliente(List<Cliente> listaCliente){
+    public void preencherTabelaCliente(List<Cliente> listaCliente){
         String colunas[] = {"ID", "Nome", "Telefone", "CPF"};
         String dadosCliente[][] = new String[listaCliente.size()][colunas.length];
         

@@ -209,18 +209,24 @@ public class RegistroCliente extends javax.swing.JFrame {
          
          if(!campoVaziosCliente()){
              if(validacoesCliente()){
-                 cliente.setNomeCliente(txtNome.getText());
-                 cliente.setTelefone(txtTelefone.getText());
-                 cliente.setCPF(txtCPF.getText());
+                 cliente.setNomeCliente(txtNome.getText().trim());
+                 cliente.setTelefone(txtTelefone.getText().trim());
+                 cliente.setCPF(txtCPF.getText().trim());
                  
-                 ClienteDAO clienteDAO = new ClienteDAO();
-                 clienteDAO.cadastrarCliente(cliente);
+                 try{
+                     ClienteDAO clienteDAO = new ClienteDAO();
+                    clienteDAO.cadastrarCliente(cliente);
                  
-                 JOptionPane.showMessageDialog(rootPane, "O Cliente foi registrado.");
+                    JOptionPane.showMessageDialog(rootPane, "O Cliente foi registrado.");
                  
-                 txtNome.setText("");
-                 txtTelefone.setText("");
-                 txtCPF.setText("");
+                    txtNome.setText("");
+                    txtTelefone.setText("");
+                    txtCPF.setText("");
+                }
+                catch(Exception ex){
+                    JOptionPane.showMessageDialog(rootPane, "Erro ao cadastrar o cliente: " + ex.getMessage());
+                    return;
+                }
              }
              else{
                  return;
@@ -294,6 +300,7 @@ public class RegistroCliente extends javax.swing.JFrame {
     private boolean validacoesCliente(){
         String telefone = txtTelefone.getText();
         String CPF = txtCPF.getText();
+        
         boolean testeTelefone = telefone.matches("[0-9]{2} [0-9]{5}[-][0-9]{4}");
         boolean testeCPF = CPF.matches("[0-9]{3}[.][0-9]{3}[.][0-9]{3}[-][0-9]{2}");
 //        

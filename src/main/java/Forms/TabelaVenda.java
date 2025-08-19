@@ -23,11 +23,15 @@ public class TabelaVenda extends javax.swing.JFrame {
      */
     public TabelaVenda() {
         initComponents();
+        preencherTabelaVenda();
+        acessibilidadeTabelaVenda();
+    }
+    
+    private void preencherTabelaVenda(){
         RegistroVendaDAO registroVendaDAO = new RegistroVendaDAO();
         List<RegistroVenda> vendaLista = registroVendaDAO.getVenda();
         preencherTabelaVenda(vendaLista);
-        acessibilidadeTabelaVenda();
-    }
+    } 
     
     /**
      * Método para preencher a tabela com a lista de objetos do tipo venda. 

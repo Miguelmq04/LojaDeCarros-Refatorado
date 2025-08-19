@@ -43,28 +43,33 @@ public class RegistroVendaCarro extends javax.swing.JFrame {
      * O método recupera as listas de cada objeto disponível no banco de dados e adiciona-os em cada combobox.
      */
     public void preencherCombo(){
+         preencherComboVeiculo();
+         preencherComboCliente();
+         preencherComboFuncionario();
+    }
+    
+    private void preencherComboVeiculo(){
         cbxVeiculo.addItem("Veículo");
-        cbxCliente.addItem("Cliente");
-        cbxFuncionario.addItem("Funcionario");
-        
-        VeiculoDAO veiculoDAO = new VeiculoDAO();
-        
-        List<Veiculo> veiculo = veiculoDAO.listar();
-        
-        for(Veiculo v : veiculo){
+        VeiculoDAO veiculoDao = new VeiculoDAO();
+        List<Veiculo> veiculos = veiculoDao.listar();
+        for(Veiculo v: veiculos){
             cbxVeiculo.addItem(v);
         }
-        
-        ClienteDAO clienteDAO = new ClienteDAO();
-        List<Cliente> cliente = clienteDAO.getCliente();
-        
-        for(Cliente c : cliente){
+    }
+    
+    private void preencherComboCliente(){
+        cbxCliente.addItem("Cliente");
+        ClienteDAO clienteDao = new ClienteDAO();
+        List<Cliente> clientes = clienteDao.listar();
+        for(Cliente c : clientes){
             cbxCliente.addItem(c);
         }
-        
-        FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
-        List<Funcionarios> funcionarios = funcionarioDAO.listar();
-        
+    }
+    
+    private void preencherComboFuncionario(){
+        cbxFuncionario.addItem("Funcionário");
+        FuncionarioDAO funcionarioDao = new FuncionarioDAO();
+        List<Funcionarios> funcionarios = funcionarioDao.listar();
         for(Funcionarios f : funcionarios){
             cbxFuncionario.addItem(f);
         }
@@ -232,14 +237,21 @@ public class RegistroVendaCarro extends javax.swing.JFrame {
            registroVenda.setVeiculos(Arrays.asList(veiculoSelecionado));
            veiculoSelecionado.setRegistroVenda(Arrays.asList(registroVenda));
            
-           RegistroVendaDAO registroVendaDAO = new RegistroVendaDAO();
-           registroVendaDAO.cadastrarVenda(registroVenda);
+           try{
+                RegistroVendaDAO registroVendaDAO = new RegistroVendaDAO();
+                registroVendaDAO.cadastrarVenda(registroVenda);
            
-           JOptionPane.showMessageDialog(rootPane, "A venda foi registrada.");
+                JOptionPane.showMessageDialog(rootPane, "A venda foi registrada.");
            
-           cbxVeiculo.setSelectedIndex(0);
-           cbxCliente.setSelectedIndex(0);
-           cbxFuncionario.setSelectedIndex(0);
+                cbxVeiculo.setSelectedIndex(0);
+                cbxCliente.setSelectedIndex(0);
+                cbxFuncionario.setSelectedIndex(0);
+           }
+           catch(Exception e){
+              JOptionPane.showMessageDialog(rootPane, "Erro ao cadastrar a venda");
+              return;
+           }
+          
         }
        else{
            return;
@@ -358,3 +370,4 @@ public class RegistroVendaCarro extends javax.swing.JFrame {
         btnRegistarVenda.setMnemonic(KeyEvent.VK_D);
     }
 }
+

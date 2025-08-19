@@ -8,6 +8,7 @@ Forms\TabelaVenda$4.class
 Forms\RegitrosTelas\RegistroVendaCarro$1.class
 Forms\RegitrosTelas\RegistroCliente$2.class
 Forms\RegitrosTelas\RegistroTelaVeiculo$4.class
+Forms\TelaLoginPI$4.class
 Forms\RegitrosTelas\RegistroVendaCarro.class
 Forms\RegitrosTelas\RegistroFuncionario$1.class
 Forms\TabelaCliente$1.class
@@ -19,6 +20,7 @@ DAO\LoginFuncionarioDAO.class
 Entities\RegistroVeiculo.class
 Forms\TabelaCliente$3.class
 Forms\TabelaVenda$3.class
+Forms\TelaLoginPI$1.class
 Forms\RegitrosTelas\RegistroTelaVeiculo$5.class
 DAO\JPAUtil.class
 DAO\RegistroVendaDAO.class
@@ -29,6 +31,7 @@ Forms\RegitrosTelas\RegistroCliente.class
 Forms\TabelaVeiculo.class
 Forms\TabelaVenda.class
 DAO\FuncionarioDAO.class
+DAO\LoginDAO.class
 DAO\ClienteDAO.class
 Forms\TabelaVeiculo$1.class
 Forms\RegitrosTelas\RegistroTelaVeiculo$6.class
@@ -40,7 +43,7 @@ Forms\TelaPrincipal$1.class
 Entities\TipoCargo.class
 Forms\TabelaCliente$4.class
 Forms\RegitrosTelas\RegistroFuncionario$3.class
-Forms\TabelaFuncionario$5.class
+Forms\TelaLoginPI$2.class
 Forms\TelaPrincipal$4.class
 Entities\Funcionarios.class
 Forms\RegitrosTelas\RegistroVendaCarro$3.class
@@ -58,6 +61,7 @@ Forms\TabelaVeiculo$2.class
 Forms\TelaPrincipal$2.class
 Entities\LoginFuncionario.class
 Forms\RegitrosTelas\RegistroCliente$1.class
+Forms\TelaLoginPI.class
 Entities\RegistroVenda.class
 Forms\RegitrosTelas\RegistroFuncionario.class
 Forms\TabelaVeiculo$5.class
@@ -66,3 +70,4 @@ Forms\RegitrosTelas\RegistroTelaVeiculo$3.class
 Forms\TabelaFuncionario$1.class
 Forms\RegitrosTelas\RegistroFuncionario$2.class
 Forms\RegitrosTelas\RegistroVendaCarro$2.class
+Forms\TelaLoginPI$3.class

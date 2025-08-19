@@ -25,11 +25,14 @@ public class TabelaVeiculo extends javax.swing.JFrame {
      */
     public TabelaVeiculo() {
         initComponents();
-        
+        prencherTabelaVeiculo();
+        acessibilidadeTabelaVeiculo();
+    }
+    
+    private void prencherTabelaVeiculo(){
         VeiculoDAO veiculoDAO = new VeiculoDAO();
         List<Veiculo> veiculoLista = veiculoDAO.listar();
         preencherTabelaVeiculo(veiculoLista);
-        acessibilidadeTabelaVeiculo();
     }
     
     /**

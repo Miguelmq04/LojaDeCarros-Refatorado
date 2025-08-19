@@ -503,21 +503,22 @@ public class RegistroTelaVeiculo extends javax.swing.JFrame {
         
         if(!validacaoVeiculo()){
             try{
-                veiculo.setMarcaVeiculo(txtMarca.getText());
-                veiculo.setModeloVeiculo(txtModelo.getText());
-                veiculo.setCorVeiculo(txtCor.getText());
-                veiculo.setCambioVeiculo(txtCambio.getText());
-                veiculo.setAnoVeiculo(Year.parse(txtAno.getText()));
-                veiculo.setAcessorios(txtAcessorios.getText());
-                veiculo.setQuilometragem(Double.valueOf(txtQuilometragem.getText()));
-                veiculo.setCondicaoVeiculo(txtCondicao.getText());
-                veiculo.setStatusManutencao(txtCondicao.getText());
-                veiculo.setPrecoVeiculo(Double.valueOf(txtPreco.getText()));
-                veiculo.setGarantia(txtGarantia.getText());
+                veiculo.setMarcaVeiculo(txtMarca.getText().trim());
+                veiculo.setModeloVeiculo(txtModelo.getText().trim());
+                veiculo.setCorVeiculo(txtCor.getText().trim());
+                veiculo.setCambioVeiculo(txtCambio.getText().trim());
+                veiculo.setAnoVeiculo(Year.parse(txtAno.getText().trim()));
+                veiculo.setAcessorios(txtAcessorios.getText().trim());
+                veiculo.setQuilometragem(Double.valueOf(txtQuilometragem.getText().trim()));
+                veiculo.setCondicaoVeiculo(txtCondicao.getText().trim());
+                veiculo.setStatusManutencao(txtCondicao.getText().trim());
+                veiculo.setPrecoVeiculo(Double.valueOf(txtPreco.getText().trim()));
+                veiculo.setGarantia(txtGarantia.getText().trim());
                 
                 Funcionarios FuncionarioSelecionado = (Funcionarios) cbxFuncionario.getSelectedItem();
                 registroVeiculo.setFuncionarioId(FuncionarioSelecionado);
                 registroVeiculo.setDataRegistro(LocalDate.now());
+                
                 
                 registroVeiculo.setVeiculos(Arrays.asList(veiculo)); 
                 veiculo.setRegistroVeiculo(Arrays.asList(registroVeiculo));

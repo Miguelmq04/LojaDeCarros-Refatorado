@@ -25,12 +25,16 @@ public class TabelaFuncionario extends javax.swing.JFrame {
      */
     public TabelaFuncionario() {
         initComponents();
-        FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
-        List<Funcionarios> funcionario = funcionarioDAO.listar();
-        preencherTabelaFuncionario(funcionario);
+        preencherTabelaFuncionario();
         AcessibilidadeTabelaFuncionario();
     }
 
+    private void preencherTabelaFuncionario(){
+        FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
+        List<Funcionarios> funcionarioLista = funcionarioDAO.listar();
+        preencherTabelaFuncionario(funcionarioLista);
+    }
+    
     /**
      * Método para preencher a tabela com a lista de objetos do tipo funcionario. 
      * Exibe todos os dados de funcionarios registrados no banco de dados na tabela, preenchendo as colunas 

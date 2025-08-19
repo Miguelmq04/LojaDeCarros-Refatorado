@@ -3,6 +3,7 @@ D:\projetos1\NetBeans\ProjetoPI-LojaDeCarros\src\main\java\DAO\CargoDAO.java
 D:\projetos1\NetBeans\ProjetoPI-LojaDeCarros\src\main\java\DAO\ClienteDAO.java
 D:\projetos1\NetBeans\ProjetoPI-LojaDeCarros\src\main\java\DAO\FuncionarioDAO.java
 D:\projetos1\NetBeans\ProjetoPI-LojaDeCarros\src\main\java\DAO\JPAUtil.java
+D:\projetos1\NetBeans\ProjetoPI-LojaDeCarros\src\main\java\DAO\LoginDAO.java
 D:\projetos1\NetBeans\ProjetoPI-LojaDeCarros\src\main\java\DAO\LoginFuncionarioDAO.java
 D:\projetos1\NetBeans\ProjetoPI-LojaDeCarros\src\main\java\DAO\RegistroVendaDAO.java
 D:\projetos1\NetBeans\ProjetoPI-LojaDeCarros\src\main\java\DAO\VeiculoDAO.java
@@ -22,4 +23,5 @@ D:\projetos1\NetBeans\ProjetoPI-LojaDeCarros\src\main\java\Forms\TabelaCliente.j
 D:\projetos1\NetBeans\ProjetoPI-LojaDeCarros\src\main\java\Forms\TabelaFuncionario.java
 D:\projetos1\NetBeans\ProjetoPI-LojaDeCarros\src\main\java\Forms\TabelaVeiculo.java
 D:\projetos1\NetBeans\ProjetoPI-LojaDeCarros\src\main\java\Forms\TabelaVenda.java
+D:\projetos1\NetBeans\ProjetoPI-LojaDeCarros\src\main\java\Forms\TelaLoginPI.java
 D:\projetos1\NetBeans\ProjetoPI-LojaDeCarros\src\main\java\Forms\TelaPrincipal.java
