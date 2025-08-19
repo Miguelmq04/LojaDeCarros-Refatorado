@@ -1,7 +1,7 @@
 # Loja de Carros
 
 ### Status do projeto
-Projeto finalizado,  melhorias e refinamentos futuras pendentes.
+foi feito um refatoramento no projeto, mais melhorias e refinamentos futuras pendentes.
 
 ### Tecnologias usadas
 * Java
@@ -16,6 +16,7 @@ O software foi desenvolvido para gerenciar uma loja de veículos, tornando o tra
 ### Funcionalidades do sistema
 O software apresenta as seguintes funcionalidades:
 
+* Sistema de login
 * Cadastro de veículos
 * Cadastro de funcionários
 * Cadastro de clientes
